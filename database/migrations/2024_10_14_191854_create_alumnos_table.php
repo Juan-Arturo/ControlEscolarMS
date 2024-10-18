@@ -6,26 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('alumnos', function (Blueprint $table) {
-            $table->id();
+            $table->id('matricula'); // La matrícula será la clave primaria
             $table->string('nombre');
-            $table->string('apellido');
-            $table->string('correo')->unique();
-            $table->string('telefono')->nullable();
+            $table->string('apellido_paterno');
+            $table->string('apellido_materno');
+            $table->string('especialidad')->nullable();
+            $table->string('seguro_medico')->nullable();
+            $table->string('curp')->unique(); // Agregar campo CURP como único
+            $table->date('fecha_nacimiento')->nullable(); // Agregar la columna de fecha de nacimiento
             $table->timestamps();
         });
     }
-    
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('alumnos');
-    }
+
+   /**
+    * Reverse the migrations.
+    */
+   public function down()
+   {
+       Schema::dropIfExists('alumnos');
+   }
 };
