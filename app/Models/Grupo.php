@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Models;
+use App\Models\Alumno;
+
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,9 +18,21 @@ class Grupo extends Model
     protected $table = 'grupos';
 
 
-    public function alumnos()
-{
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Evento que se dispara antes de eliminar el grupo
+        static::deleting(function ($grupo) {
+            // Elimina los alumnos asociados al grupo
+            $grupo->alumnos()->delete();
+        });
+    }
+
+
+
+    public function alumnos(){
     return $this->belongsToMany(Alumno::class, 'grupo_alumno', 'grupo_id', 'alumno_id');
-}
+    }
 
 }

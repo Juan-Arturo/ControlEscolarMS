@@ -27,10 +27,12 @@ class Alumno extends Model
         
     ];
 
-    //Relación con el modelo Grupo si es necesario
-    public function grupos()
+    //Relación con el modelo Grupo
+    public function grupo()
     {
         return $this->belongsToMany(Grupo::class, 'grupo_alumno', 'alumno_id', 'grupo_id');
     }
+    
+
     
 }

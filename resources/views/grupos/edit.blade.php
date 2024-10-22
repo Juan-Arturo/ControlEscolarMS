@@ -7,6 +7,7 @@
                     Completa los datos del grado y grupo de los alumnos
                 </p>
             </div>
+            
 
             <form action="{{ route('grupos.update', $controllerGrupo->id) }}" method="POST" class="mt-8 space-y-6" novalidate>
                 @csrf

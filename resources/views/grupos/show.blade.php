@@ -57,13 +57,13 @@
                             <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->fecha_nacimiento }}</td>
                             <td class="px-4 py-4 text-sm font-medium flex space-x-2">
                                 <!-- Enlace para editar alumno -->
-                                <a href="" class="text-[#9D2449] hover:text-[#621132]">Editar</a>
+                                <a href="{{ route('alumnos.edit', $alumno->matricula) }}" class="text-[#9D2449] hover:text-[#621132]">Editar Alumno</a>
                                 
                                 <!-- Formulario para eliminar alumno -->
-                                <form action="" method="POST" class="inline-block">
+                                <form action="{{ route('alumnos.destroy', $alumno->matricula) }}" method="POST" class="inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-red-600 hover:text-red-900">Eliminar</button>
+                                    <button type="submit" class="text-red-600 hover:text-red-900">Eliminar  Alumno</button>
                                 </form>
                             </td>
                         </tr>
