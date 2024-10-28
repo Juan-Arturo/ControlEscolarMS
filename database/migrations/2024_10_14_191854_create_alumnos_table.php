@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('alumnos', function (Blueprint $table) {
-            $table->id('matricula'); // La matrícula será la clave primaria
+            $table->id('matricula')->unsigned(); // La matrícula será la clave primaria
             $table->string('nombre');
             $table->string('apellido_paterno');
             $table->string('apellido_materno');
