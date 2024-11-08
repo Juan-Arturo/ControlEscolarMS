@@ -22,9 +22,20 @@
                     {{ __('Grupos') }}
                 </x-nav-link>
 
+                  <!-- Enlace hacia materias -->
+                  <x-nav-link href="{{ route('materias.index') }}" :active="request()->routeIs('materias.index')">
+                    {{ __('Materias') }}
+                </x-nav-link>
+
+
                 <!-- Enlace hacia asistencias -->
                 <x-nav-link href="{{ route('asistencias.index') }}" :active="request()->routeIs('asistencias.index')">
                     {{ __('Asistencias') }}
+                </x-nav-link>
+
+                <!-- Enlace hacia graficas -->
+                <x-nav-link href="{{ route('graficas.index') }}" :active="request()->routeIs('graficas.index')">
+                    {{ __('Graficas') }}
                 </x-nav-link>
 
             </div>

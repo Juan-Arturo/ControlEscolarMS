@@ -9,8 +9,10 @@ class Asistencia extends Model
 {
     use HasFactory;
 
+    
     // Definir la tabla explícitamente
     protected $table = 'asistencias';
 
-    protected $fillable = ['alumno_id', 'grupo_id', 'fecha', 'presente'];
+    //Iincluir todos los campos necesarios
+    protected $fillable = ['alumno_id', 'grupo_id', 'materia_id', 'fecha', 'presente'];
 }

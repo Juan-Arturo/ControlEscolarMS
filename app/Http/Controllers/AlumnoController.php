@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Grupo;
 use App\Models\Alumno;
 use App\Models\GrupoAlumno;
+use App\Models\Materia;
 
 class AlumnoController extends Controller
 {
@@ -75,7 +76,8 @@ class AlumnoController extends Controller
     public function show($grupo)
     {
         $controllerGrupo = Grupo::find($grupo);
-        return view('alumnos.show', compact('controllerGrupo'));
+        $controllerMaterias= Materia::all();
+        return view('alumnos.show', compact('controllerGrupo', 'controllerMaterias'));
        
     }
     /**

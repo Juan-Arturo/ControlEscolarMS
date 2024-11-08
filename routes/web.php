@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\AsistenciaController;
+use App\Http\Controllers\GraficaController;
+use App\Http\Controllers\MateriaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,6 +18,12 @@ Route::get('/home', function () {
 Route::resource('grupos', GrupoController::class);
 Route::resource('alumnos', AlumnoController::class);
 Route::resource('asistencias', AsistenciaController::class);
+Route::resource('graficas', GraficaController::class);
+Route::resource('materias', MateriaController::class);
+
+/*Rustas especificas*/
+Route::get('/asistencia/consultar', [AsistenciaController::class, 'consultarAsistencia'])->name('asistencia.consultar');
+
 
 
 
