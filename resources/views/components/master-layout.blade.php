@@ -12,23 +12,37 @@
 
 <body>
 
-     <!-- Incluir el header de Jetstream -->
+    <!-- Incluir el header de Jetstream -->
     @livewire('navigation-menu')
     {{-- @include('components.header') --}}
 
-    <main>
-        {{ $slot }}
-    </main>
+    <!-- Contenedor principal -->
+    <div class="flex min-h-screen bg-gray-100">
 
-    <footer>
-        <!-- Contenido del pie de página -->
-    </footer>
+        {{-- Sidebar --}}
+        @include('components.sidebar')
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+        <main class="flex-grow ">
+            {{ $slot }}
+
+            <footer>
+                @include('components.footer')
+            </footer>
+        </main>
+
+        
+    </div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-   
+
 
 </body>
 

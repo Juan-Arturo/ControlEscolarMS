@@ -1,5 +1,5 @@
 <x-master-layout title="Listado de Grupos">
-    <div class="min-h-screen bg-gray-100 flex items-center justify-center background">
+    <div class="min-h-screen bg-gray-100 flex items-start py-2 justify-center background">
         <div class="max-w-5xl w-full space-y-10 bg-white shadow-2xl rounded-lg p-10">
             <!-- Título del Listado -->
             <div>

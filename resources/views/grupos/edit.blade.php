@@ -1,5 +1,5 @@
 <x-master-layout title="Grupos">
-    <div class="min-h-screen bg-gray-100 flex items-center justify-center background">
+    <div class="min-h-screen bg-gray-100 flex items-start py-6  justify-center background">
         <div class="max-w-md w-full space-y-8 bg-white shadow-2xl rounded-lg p-10">
             <div>
                 <h2 class="text-center text-3xl font-extrabold text-[#621132]">Editar Grado y Grupo</h2>

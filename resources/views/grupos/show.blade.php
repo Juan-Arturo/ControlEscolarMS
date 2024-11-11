@@ -1,5 +1,5 @@
 <x-master-layout title="Listado de Alumnos">
-    <div class="min-h-screen bg-gray-100 flex items-center justify-center background">
+    <div class="min-h-screen bg-gray-100 flex items-start py-4 justify-center background">
         <!-- Fondo blanco más amplio y sombreado -->
         <div class="max-w-7xl w-full space-y-8 bg-white shadow-2xl rounded-lg p-8">
             <!-- Título -->

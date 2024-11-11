@@ -1,5 +1,5 @@
 <x-master-layout title="Listado de Alumnos">
-    <div class="min-h-screen bg-gray-100 flex items-start justify-center pt-8 background">
+    <div class="min-h-screen bg-gray-100 flex items-start py-4  justify-center  background">
         <div class="max-w-6xl w-full bg-white shadow-xl rounded-lg p-10">
             <!-- Encabezado -->
             <div class="text-center mb-8">
