@@ -5,12 +5,6 @@
             Panel de Administración de Materias
         </h1>
 
-        <!-- Botón para agregar nueva materia -->
-        <div class="flex justify-end mb-8">
-            <a href="{{ route('materias.create') }}" class="bg-[#621132] text-white px-8 py-3 rounded-lg shadow-md hover:bg-[#902449] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#285C4D]">
-                + Agregar Nueva Materia
-            </a>
-        </div>
 
         <!-- Tabla de Materias -->
         <div class="overflow-x-auto shadow-2xl rounded-lg bg-white">
@@ -45,6 +39,14 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+
+        
+        <!-- Botón para agregar nueva materia -->
+        <div class="flex justify-end mt-4">
+            <a href="{{ route('materias.create') }}" class="bg-[#621132] text-white px-8 py-3 rounded-lg shadow-md hover:bg-[#902449] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#285C4D]">
+                + Agregar Nueva Materia
+            </a>
         </div>
     </div>
 </x-master-layout>
