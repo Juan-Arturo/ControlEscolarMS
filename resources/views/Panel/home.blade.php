@@ -1,5 +1,6 @@
 <x-master-layout title="Bienvenido al Control Escolar Media Superior">
-    <div class="bg-gray-100 min-h-screen flex flex-col justify-center items-center text-gray-800">
+    
+    <div class="bg-gray-100 min-h-screen flex flex-col justify-start py-8 items-center text-gray-800 background">
         <!-- Header -->
         <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-gray-900">Bienvenido al Control Escolar</h1>
@@ -13,8 +14,6 @@
                 Este es el portal de gestión escolar, donde podrás acceder y administrar toda la información académica, de grupos y asistencia de los estudiantes.
             </p>
         </div>
-
-       
     </div>
 </x-master-layout>
 

@@ -12,9 +12,9 @@ Route::get('/', function () {
 });
 
 
- Route::get('/home', function () {
-     return view('Panel.home');
-});
+Route::get('/home', function () {
+    return view('Panel.home');
+})->name('home.index');
 
 
 Route::resource('grupos', GrupoController::class);
@@ -25,6 +25,7 @@ Route::resource('materias', MateriaController::class);
 
 /*Rustas especificas*/
 Route::get('/asistencia/consultar', [AsistenciaController::class, 'consultarAsistencia'])->name('asistencia.consultar');
+
 
 
 

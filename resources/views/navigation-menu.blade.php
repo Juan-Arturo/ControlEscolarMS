@@ -3,9 +3,17 @@
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
             <div class="flex items-center space-x-4">
-                <a href="{{ route('dashboard') }}" class="shrink-0">
+                {{-- <a href="{{ route('dashboard') }}" class="shrink-0">
                     <x-application-mark class="h-10 w-auto" />
+                </a> --}}
+
+
+
+                <a href="{{ route('home.index') }}" class="shrink-0">
+                    <img src="{{ asset('/img/LogoTlaxcala.png') }}" alt="Logo" class="h-10 w-auto" />
                 </a>
+
+
                 <!-- Primary Navigation Links -->
                 <div class="hidden space-x-8 sm:flex">
                     {{-- <x-nav-link href="{{ route('grupos.index') }}" :active="request()->routeIs('grupos.index')" class="hover:underline">
@@ -54,21 +62,10 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            {{-- <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('grupos.index') }}" :active="request()->routeIs('grupos.index')">
-                {{ __('Grupos') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('materias.index') }}" :active="request()->routeIs('materias.index')">
-                {{ __('Materias') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('asistencias.index') }}" :active="request()->routeIs('asistencias.index')">
-                {{ __('Asistencias') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('graficas.index') }}" :active="request()->routeIs('graficas.index')">
-                {{ __('Gráficas') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
+          
         </div>
     </div>
 </nav>
