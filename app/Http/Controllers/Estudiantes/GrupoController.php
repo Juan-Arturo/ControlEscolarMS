@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Estudiantes;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Models\Grupo;
+use App\Models\Estudiantes\Grupo;
 
 class GrupoController extends Controller
 {
@@ -14,7 +15,7 @@ class GrupoController extends Controller
     {
 
         $grupos = Grupo::all();
-        return view('Panel.Estudiantes.grupos.index', compact('grupos'));
+        return view('panel.estudiantes.grupos.index', compact('grupos'));
     }
 
     /**
@@ -22,7 +23,7 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        return view('Panel.Estudiantes.grupos.create');
+        return view('panel.estudiantes.grupos.create');
     }
 
     /**
@@ -54,7 +55,7 @@ class GrupoController extends Controller
         }
     
         // Pasar el grupo y los alumnos a la vista
-        return view('Panel.Estudiantes.grupos.show', compact('controllerGrupo'));
+        return view('panel.estudiantes.grupos.show', compact('controllerGrupo'));
     }
     
     
@@ -65,7 +66,7 @@ class GrupoController extends Controller
     public function edit($grupo)
     {
         $controllerGrupo = Grupo::find($grupo);
-        return view('Panel.Estudiantes.grupos.edit', compact('controllerGrupo'));
+        return view('panel.estudiantes.grupos.edit', compact('controllerGrupo'));
     }
 
     /**

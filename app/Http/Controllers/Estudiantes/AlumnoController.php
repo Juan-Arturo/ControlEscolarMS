@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Estudiantes;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Models\Grupo;
-use App\Models\Alumno;
-use App\Models\GrupoAlumno;
-use App\Models\Materia;
+use App\Models\Estudiantes\Grupo;
+use App\Models\Estudiantes\Alumno;
+use App\Models\Estudiantes\GrupoAlumno;
+use App\Models\Semestres\Materia;
 
 class AlumnoController extends Controller
 {
@@ -25,7 +26,7 @@ class AlumnoController extends Controller
     {
         $grupoId = $request->input('grupo_id'); // Obtener el ID del grupo de la solicitud
         $grupos = Grupo::all(); // Si necesitas todos los grupos
-        return view('alumnos.create', compact('grupos', 'grupoId')); // Pasar el grupoId a la vista
+        return view('panel.estudiantes.alumnos.create', compact('grupos', 'grupoId')); // Pasar el grupoId a la vista
     }
     
     
@@ -77,7 +78,7 @@ class AlumnoController extends Controller
     {
         $controllerGrupo = Grupo::find($grupo);
         $controllerMaterias= Materia::all();
-        return view('alumnos.show', compact('controllerGrupo', 'controllerMaterias'));
+        return view('panel.estudiantes.alumnos.show', compact('controllerGrupo', 'controllerMaterias'));
        
     }
     /**
@@ -95,14 +96,9 @@ class AlumnoController extends Controller
         $grupos = Grupo::all();
     
         // Pasa el alumno, el grupo y todos los grupos a la vista
-        return view('alumnos.edit', compact('alumno', 'grupo', 'grupos'));
+        return view('panel.estudiantes.alumnos.edit', compact('alumno', 'grupo', 'grupos'));
     }
     
-    
-    
-
-    
-
 
     /**
      * Update the specified resource in storage.

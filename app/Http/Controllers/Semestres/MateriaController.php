@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Semestres;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Models\Materia;
+use App\Models\Semestres\Materia;
 
 
 class MateriaController extends Controller
@@ -11,7 +12,7 @@ class MateriaController extends Controller
     public function index()
     {
         $materias = Materia::all(); // Obtiene todas las materias de la base de datos
-        return view('materias.index', compact('materias')); // Pasa las materias a la vista
+        return view('panel.semestres.materias.index', compact('materias')); // Pasa las materias a la vista
     }
     
 
@@ -41,13 +42,13 @@ class MateriaController extends Controller
 
 
     public function create (){
-        return view('materias.create');
+        return view('panel.semestres.materias.create');
     }
 
 
     public function edit($id){
     $materia = Materia::findOrFail($id); // Busca la materia por ID
-    return view('materias.edit', compact('materia')); // Pasa la materia a la vista de edición
+    return view('panel.semestres.materias.edit', compact('materia')); // Pasa la materia a la vista de edición
    }
 
    public function destroy($id){

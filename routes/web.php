@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GrupoController;
-use App\Http\Controllers\AlumnoController;
-use App\Http\Controllers\AsistenciaController;
-use App\Http\Controllers\GraficaController;
-use App\Http\Controllers\MateriaController;
+use App\Http\Controllers\Estudiantes\GrupoController;
+use App\Http\Controllers\Estudiantes\AlumnoController;
+use App\Http\Controllers\Estudiantes\AsistenciaController;
+use App\Http\Controllers\Estudiantes\GraficaController;
+use App\Http\Controllers\Semestres\MateriaController;
+use App\Http\Controllers\Semestres\SemestersController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +23,7 @@ Route::resource('alumnos', AlumnoController::class);
 Route::resource('asistencias', AsistenciaController::class);
 Route::resource('graficas', GraficaController::class);
 Route::resource('materias', MateriaController::class);
+Route::resource('semestres', SemestersController::class);
 
 /*Rustas especificas*/
 Route::get('/asistencia/consultar', [AsistenciaController::class, 'consultarAsistencia'])->name('asistencia.consultar');

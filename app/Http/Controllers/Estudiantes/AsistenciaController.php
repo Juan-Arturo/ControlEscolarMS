@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Estudiantes;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Models\Asistencia;
-use App\Models\Grupo;
-use App\Models\Alumno;
+use App\Models\Estudiantes\Asistencia;
+use App\Models\Estudiantes\Grupo;
+use App\Models\Estudiantes\Alumno;
 
 class AsistenciaController extends Controller{
 
@@ -13,7 +14,7 @@ class AsistenciaController extends Controller{
 public function index(){
     $grupos=Grupo::all();
     $alumnosDelGrupo = [];
-    return view('asistencias.index', compact('grupos', 'alumnosDelGrupo'));
+    return view('panel.estudiantes.asistencias.index', compact('grupos', 'alumnosDelGrupo'));
 }
 
 
@@ -72,7 +73,7 @@ public function consultarAsistencia(Request $request)
     $asistenciaPorAlumno = $asistencias->pluck('presente', 'alumno_id')->toArray();
 
     $grupos = Grupo::all();
-    return view('asistencias.index', compact('alumnosDelGrupo', 'asistenciaPorAlumno', 'grupos'));
+    return view('panel.estudiantes.asistencias.index', compact('alumnosDelGrupo', 'asistenciaPorAlumno', 'grupos'));
 }
 
 
