@@ -70,7 +70,7 @@
                             <option value="Contabilidad" {{ (old('especialidad', $alumno->especialidad) == 'Contabilidad') ? 'selected' : '' }}>Contabilidad</option>
                             <option value="Electrónica" {{ (old('especialidad', $alumno->especialidad) == 'Electrónica') ? 'selected' : '' }}>Electrónica</option>
                             <option value="Quimica" {{ (old('especialidad', $alumno->especialidad) == 'Quimica') ? 'selected' : '' }}>Química</option>
-                            <!-- Agregar más opciones según sea necesario -->
+                          
                         </select>
                     </div>
 

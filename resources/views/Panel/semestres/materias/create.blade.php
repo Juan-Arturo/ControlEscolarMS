@@ -1,4 +1,4 @@
-<!-- resources/views/materias/create.blade.php -->
+
 <x-master-layout title="Crear Materia">
     <div class="min-h-screen bg-gray-100 flex flex-col justify-start items-center background">
         <div class="container  mx-auto py-10 ">

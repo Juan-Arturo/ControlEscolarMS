@@ -19,7 +19,7 @@ class GrupoAlumno extends Model
          'alumno_id',
      ];
  
-     // Define las relaciones si es necesario
+     // Relaciones entre modelos(tablas)
      public function grupo()
      {
          return $this->belongsTo(Grupo::class);

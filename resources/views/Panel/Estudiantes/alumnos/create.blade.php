@@ -57,7 +57,7 @@
                             <option value="Contabilidad">Contabilidad</option>
                             <option value="Electrónica">Electrónica</option>
                             <option value="Quimica">Quimica</option>
-                            <!-- Agregar más opciones según sea necesario -->
+                           
                         </select>
                     </div>
 
