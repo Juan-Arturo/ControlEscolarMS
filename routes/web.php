@@ -6,7 +6,7 @@ use App\Http\Controllers\Estudiantes\AlumnoController;
 use App\Http\Controllers\Estudiantes\AsistenciaController;
 use App\Http\Controllers\Estudiantes\GraficaController;
 use App\Http\Controllers\Semestres\MateriaController;
-use App\Http\Controllers\Semestres\SemestersController;
+use App\Http\Controllers\Semestres\SemestresController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,7 +23,7 @@ Route::resource('alumnos', AlumnoController::class);
 Route::resource('asistencias', AsistenciaController::class);
 Route::resource('graficas', GraficaController::class);
 Route::resource('materias', MateriaController::class);
-Route::resource('semestres', SemestersController::class);
+Route::resource('semestres', SemestresController::class);
 
 /*Rustas especificas*/
 Route::get('/asistencia/consultar', [AsistenciaController::class, 'consultarAsistencia'])->name('asistencia.consultar');
