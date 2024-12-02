@@ -15,6 +15,9 @@ class Semestre extends Model
      protected $table = 'semestres';
 
     protected $fillable = [
-        'nombre', 'fecha_inicio', 'fecha_fin'
+        'nombre', 
+        'descripcion',
+        'fecha_inicio',
+        'fecha_fin'
     ];
 }

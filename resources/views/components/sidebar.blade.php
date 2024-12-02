@@ -33,6 +33,7 @@
                         <div class="pl-8 mt-3 space-y-2">
                             <a href="{{ route('semestres.index') }}" class="block text-gray-200 hover:text-white transition duration-300">Carga Semestres</a>
                             <a href="{{ route('materias.index') }}" class="block text-gray-200 hover:text-white transition duration-300">Materias</a>
+                            <a href="{{ route('semestre.mapacurricular') }}" class="block text-gray-200 hover:text-white transition duration-300">Mapa Curricular</a>
                         </div>
                     </div>
 

@@ -1,8 +1,8 @@
 .background {
-    background-image: url('/img/flor.png'); /* Asegúrate de que esta ruta sea correcta */
-    background-size: cover; /* Para cubrir todo el fondo */
-    background-position: center; /* Centrar la imagen */
-    background-repeat: no-repeat; /* No repetir la imagen */
+    background-image: url('/img/flor.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 

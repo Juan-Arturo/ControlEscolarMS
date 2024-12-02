@@ -27,6 +27,7 @@ Route::resource('semestres', SemestresController::class);
 
 /*Rustas especificas*/
 Route::get('/asistencia/consultar', [AsistenciaController::class, 'consultarAsistencia'])->name('asistencia.consultar');
+Route::get('/semestre/mapacurricular', [SemestresController::class, 'mapaCurricular'])->name('semestre.mapacurricular');
 
 
 
