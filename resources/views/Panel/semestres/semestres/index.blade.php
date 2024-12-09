@@ -10,53 +10,58 @@
                     class="bg-gradient-to-r from-[#285C4D] to-[#13322B] text-white px-6 py-3 rounded-full shadow-md hover:scale-105 transition-transform">
                     + Agregar Semestre
                 </button>
-
-
             </div>
 
-            <!-- Tabla de Semestres -->
-            <div class="overflow-x-auto rounded-lg shadow-lg">
-                <table class="min-w-full bg-white rounded-lg shadow-lg">
-                    <thead class="bg-[#4E232E] text-white">
-                        <tr>
-                            <th class="px-6 py-4 text-left text-sm font-bold uppercase">Nombre</th>
-                            <th class="px-6 py-4 text-left text-sm font-bold uppercase">Descripcion</th>
-                            <th class="px-6 py-4 text-left text-sm font-bold uppercase">Fecha Inicio</th>
-                            <th class="px-6 py-4 text-left text-sm font-bold uppercase">Fecha Fin</th>
-                            <th class="px-6 py-4 text-center text-sm font-bold uppercase">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-[#B38E5D]">
-                        @foreach ($Semestres as $Semestre)
-                            <tr class="hover:bg-[#F1ECE1] transition-colors duration-300">
-                                <td class="px-6 py-2 text-sm text-gray-800 font-medium">{{ $Semestre->nombre }}</td>
-                                <td class="px-6 py-2 text-sm text-gray-800 font-medium break-words max-w-xs md:max-w-md lg:max-w-lg">
-                                    {{ $Semestre->descripcion }}
-                                </td>
-                                <td class="px-6 py-2 text-sm text-gray-800 font-medium">
-                                    {{ \Carbon\Carbon::parse($Semestre->fecha_inicio)->format('d/m/Y') }}
-                                </td>
-                                <td class="px-6 py-4 text-sm text-gray-800 font-medium">
-                                    {{ \Carbon\Carbon::parse($Semestre->fecha_fin)->format('d/m/Y') }}
-                                </td>
-                                <td class="px-6 py-4 text-center">
-                                    <button class="bg-[#285C4D] text-white px-3 py-1 m-1 rounded-full text-sm font-semibold hover:bg-[#13322B] transition-colors mx-1"
-                                        onclick="openEditModal({{ $Semestre->id }}, '{{ $Semestre->nombre }}','{{ $Semestre->descripcion }}', '{{ $Semestre->fecha_inicio }}', '{{ $Semestre->fecha_fin }}')">
-                                        Editar
-                                    </button>
-            
-                                    <button class="bg-[#9D2449] text-white px-3 py-1 m-1 rounded-full text-sm font-semibold hover:bg-red-700 transition-colors mx-1"
-                                        onclick="openDeleteModal({{ $Semestre->id }})">
-                                        Eliminar
-                                    </button>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            
-        </div>
+
+
+         <!-- Tabla de Semestres -->
+<div class="overflow-x-auto rounded-lg shadow-lg">
+    <table class="min-w-full bg-white rounded-lg shadow-lg">
+        <thead class="bg-[#4E232E] text-white">
+            <tr>
+                <th class="px-2 py-4 text-left text-sm font-bold uppercase">Semestre</th>
+                <th class="px-2 py-4 text-left text-sm font-bold uppercase">Nombre</th>
+                <th class="px-2 py-4 text-left text-sm font-bold uppercase">Descripción</th>
+                <th class="px-2 py-4 text-left text-sm font-bold uppercase">Fecha Inicio</th>
+                <th class="px-2 py-4 text-left text-sm font-bold uppercase">Fecha Fin</th>
+                <th class="px-2 py-4 text-center text-sm font-bold uppercase">Acciones</th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-[#B38E5D]">
+            @foreach ($Semestres as $Semestre)
+                <tr class="hover:bg-[#F1ECE1] transition-colors duration-300">
+                    <td class="px-2 py-4 text-sm text-gray-800 font-medium">{{ $Semestre->semestre }}</td>
+                    <td class="px-2 py-4 text-sm text-gray-800 font-medium">{{ $Semestre->nombre }}</td>
+                    <td class="px-2 py-4 text-sm text-gray-800 font-medium break-words max-w-xs sm:max-w-md md:max-w-4xl lg:max-w-7xl">
+                        {{ $Semestre->descripcion }}
+                    </td>
+                    <td class="px-2 py-4 text-sm text-gray-800 font-medium">
+                        {{ \Carbon\Carbon::parse($Semestre->fecha_inicio)->format('d/m/Y') }}
+                    </td>
+                    <td class="px-2 py-4 text-sm text-gray-800 font-medium">
+                        {{ \Carbon\Carbon::parse($Semestre->fecha_fin)->format('d/m/Y') }}
+                    </td>
+                    <td class="px-2 py-4 text-center">
+                        <!-- Icono de Editar -->
+                        <button class="bg-[#285C4D] text-white px-3 py-1 m-1 rounded-full text-sm font-semibold hover:bg-[#13322B] transition-colors mx-1"
+                            onclick="openEditModal({{ $Semestre->id }},'{{ $Semestre->semestre }}', '{{ $Semestre->nombre }}','{{ $Semestre->descripcion }}', '{{ $Semestre->fecha_inicio }}', '{{ $Semestre->fecha_fin }}')">
+                            <i class="bi bi-pencil-square"></i> <!-- Icono de editar -->
+                        </button>
+                        
+                        <!-- Icono de Eliminar -->
+                        <button class="bg-[#9D2449] text-white px-3 py-1 m-1 rounded-full text-sm font-semibold hover:bg-red-700 transition-colors mx-1"
+                            onclick="openDeleteModal({{ $Semestre->id }})">
+                            <i class="bi bi-trash"></i> <!-- Icono de eliminar -->
+                        </button>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+
+
 
 
         <!-- Modal para agregar/editar semestres -->
@@ -69,13 +74,21 @@
                 <form id="semester-form" method="POST" action="{{ route('semestres.store') }}">
                     @csrf <!-- Protege contra ataques CSRF -->
 
+                     <!-- Semestre -->
+                     <div class="mb-6">
+                        <label for="semester-semester"
+                            class="block text-lg font-semibold text-[#13322B] mb-2">Semestre</label>
+                        <input type="text" id="semester-semester" name="semestre"
+                            class="w-full px-4 py-3 border border-[#285C4D] rounded-md focus:ring-2 focus:ring-[#285C4D] focus:outline-none"
+                            placeholder="Ej. Primer Semestre" required>
+                    </div>
                     <!-- Nombre -->
                     <div class="mb-6">
                         <label for="semester-name"
                             class="block text-lg font-semibold text-[#13322B] mb-2">Nombre</label>
                         <input type="text" id="semester-name" name="nombre"
                             class="w-full px-4 py-3 border border-[#285C4D] rounded-md focus:ring-2 focus:ring-[#285C4D] focus:outline-none"
-                            placeholder="Ej. Semestre 2024-A" required>
+                            placeholder="Ej. Fundamentos de la carrera" required>
                     </div>
 
                     <!-- Descripción -->

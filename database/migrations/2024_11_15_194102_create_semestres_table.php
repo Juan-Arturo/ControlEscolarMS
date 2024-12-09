@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('semestres', function (Blueprint $table) {
             $table->id();
+            $table->string('semestre');
             $table->string('nombre');
             $table->text('descripcion'); 
             $table->date('fecha_inicio');

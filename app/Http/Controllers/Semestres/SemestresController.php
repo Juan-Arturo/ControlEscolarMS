@@ -25,6 +25,7 @@ class SemestresController extends Controller
     {
         // Validar los datos
         $request->validate([
+            'semestre' => 'required|string|max:255',
             'nombre' => 'required|string|max:255',
             'descripcion' => 'required|string|max:255',
             'fecha_inicio' => 'required|date',
@@ -35,6 +36,7 @@ class SemestresController extends Controller
 
         
         $Semestres = Semestre::create([
+            'semestre' => $request->semestre,
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
             'fecha_inicio' => $request->fecha_inicio,
@@ -52,14 +54,16 @@ class SemestresController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'semestre' => 'required|string|max:255',
             'nombre' => 'required|string|max:255',
-            'descripcion' => 'required|string|max:255',
+            'descripcion' => 'required|string|max:300',
             'fecha_inicio' => 'required|date',
             'fecha_fin' => 'required|date',
         ]);
 
         $semestre = Semestre::findOrFail($id);
         $semestre->update([
+            'semestre' => $request->semestre,
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
             'fecha_inicio' => $request->fecha_inicio,
@@ -84,8 +88,10 @@ class SemestresController extends Controller
 
 
 
-    public function mapaCurricular()
-    {
-        return view('panel.semestres.semestres.mapacurricular');
-    }
+public function mapaCurricular()
+{
+    $semestres = Semestre::with('materias')->get();
+    return view('panel.semestres.semestres.mapacurricular', compact('semestres'));
+}
+
 }

@@ -17,6 +17,7 @@ addSemesterBtn.addEventListener('click', () => {
     form.action = addSemesterUrl; // Establecer la ruta dinámica usando el atributo data-action
 
     // Limpiar los campos del formulario
+    document.getElementById('semester-semester').value = '';
     document.getElementById('semester-name').value = '';
     document.getElementById('semester-description').value = '';
     document.getElementById('start-date').value = '';
@@ -31,7 +32,7 @@ addSemesterBtn.addEventListener('click', () => {
 
 
 // Edición de Semestres
-function openEditModal(id, nombre,descripcion, fecha_inicio, fecha_fin) {
+function openEditModal(id, semestre, nombre,descripcion, fecha_inicio, fecha_fin) {
     // Mostrar el modal
     modal.classList.remove('hidden');
 
@@ -42,6 +43,7 @@ function openEditModal(id, nombre,descripcion, fecha_inicio, fecha_fin) {
     form.action = `/semestres/${id}`;
 
     // Rellenar los campos del formulario con los datos del semestre
+    document.getElementById('semester-semester').value = semestre;
     document.getElementById('semester-name').value = nombre;
     document.getElementById('semester-description').value = descripcion;
     document.getElementById('start-date').value = fecha_inicio;

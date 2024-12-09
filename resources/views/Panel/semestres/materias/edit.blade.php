@@ -1,6 +1,6 @@
 <x-master-layout title="Editar Materia">
     <div class="min-h-screen bg-gray-100 flex flex-col justify-start items-center background">
-        <div class="container mx-auto py-10 ">
+        <div class="container mx-auto py-10">
             <h1 class="text-3xl font-bold text-[#4E232E] mb-6 text-center">Editar Materia</h1>
 
             <!-- Notificación de éxito usando SweetAlert2 -->
@@ -47,8 +47,30 @@
                             placeholder="Ingrese el nombre de la materia" required>
                     </div>
 
-                    <!-- Botón de Guardar Cambios -->
-                    <div class="flex justify-center">
+                    <!-- Semestre -->
+                    <div class="mb-4">
+                        <label for="semestre_id" class="block text-[#621132] font-semibold mb-2">Semestre</label>
+                        <select id="semestre_id" name="semestre_id"
+                            class="w-full px-4 py-2 border border-[#902449] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#285C4D]"
+                            required>
+                            <option value="" disabled>Seleccione el semestre</option>
+                            @foreach ($semestres as $semestre)
+                                <option value="{{ $semestre->id }}" {{ $materia->semestre_id == $semestre->id ? 'selected' : '' }}>
+                                    {{ $semestre->semestre }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="flex justify-between">
+                        <!-- Botón de Redirigir -->
+                        <a href="{{ route('materias.index') }}"
+                            class="bg-[#285C4D] text-white px-8 py-3 rounded-lg hover:bg-[#13322B] focus:outline-none focus:ring-2 focus:ring-[#13322B]">
+                            Ver Materias
+                        </a>
+
+                        <!-- Botón de Guardar Cambios -->
                         <button type="submit"
                             class="bg-[#902449] text-white px-8 py-3 rounded-lg hover:bg-[#621132] focus:outline-none focus:ring-2 focus:ring-[#13322B]">
                             Guardar Cambios

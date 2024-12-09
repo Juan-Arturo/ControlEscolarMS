@@ -10,14 +10,20 @@ class Semestre extends Model
 
     use HasFactory;
 
-    
-     // Definir la tabla explícitamente 
-     protected $table = 'semestres';
+
+    // Definir la tabla explícitamente 
+    protected $table = 'semestres';
 
     protected $fillable = [
-        'nombre', 
+        'semestre',
+        'nombre',
         'descripcion',
         'fecha_inicio',
         'fecha_fin'
     ];
+
+    public function materias()
+    {
+        return $this->hasMany(Materia::class, 'semestre_id');
+    }
 }
