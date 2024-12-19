@@ -8,19 +8,19 @@
             
             <!-- Gráfica de barras -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Ventas Mensuales</h3>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Grafica estudiantes A</h3>
                 <canvas id="barChart"></canvas>
             </div>
 
             <!-- Gráfica de líneas -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Usuarios Activos</h3>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Grafica estudiantes B</h3>
                 <canvas id="lineChart"></canvas>
             </div>
 
             <!-- Gráfica de pastel -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-lg font-semibold text-gray-800 mb-4">Distribución de Productos</h3>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Grafica estudiantes C</h3>
                 <canvas id="pieChart"></canvas>
             </div>
         </div>
