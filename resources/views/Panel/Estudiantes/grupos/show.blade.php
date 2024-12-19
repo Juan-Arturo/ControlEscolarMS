@@ -1,4 +1,5 @@
 <x-master-layout title="Listado de Alumnos">
+    
     <div class="min-h-screen bg-gray-100 flex items-start py-4 justify-center background">
         <!-- Fondo blanco más amplio y sombreado -->
         <div class="max-w-7xl w-full space-y-8 bg-white shadow-2xl rounded-lg p-8">
@@ -10,7 +11,6 @@
                 </h2>
             </div>
 
-            <!-- Tabla de alumnos -->
             <div class="mt-6 overflow-x-auto">
                 <table class="min-w-full bg-white border border-gray-300 rounded-lg overflow-hidden">
                     <thead class="bg-[#4E232E]">
@@ -19,10 +19,10 @@
                             <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide">Nombre</th>
                             <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide">Apellido Paterno</th>
                             <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide">Apellido Materno</th>
-                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide">Especialidad</th>
-                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide">Seguro Médico</th>
-                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide">CURP</th>
-                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide">Fecha de Nacimiento</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide hidden sm:table-cell">Especialidad</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide hidden sm:table-cell">Seguro Médico</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide hidden sm:table-cell">CURP</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-white uppercase tracking-wide hidden sm:table-cell">Fecha de Nacimiento</th>
                             <th class="px-4 py-3 text-center text-sm font-semibold text-white uppercase tracking-wide">Acciones</th>
                         </tr>
                     </thead>
@@ -33,15 +33,12 @@
                                 <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->nombre }}</td>
                                 <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->apellido_paterno }}</td>
                                 <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->apellido_materno }}</td>
-                                <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->especialidad }}</td>
-                                <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->seguro_medico }}</td>
-                                <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->curp }}</td>
-                                <td class="px-4 py-4 text-sm text-gray-900">{{ $alumno->fecha_nacimiento }}</td>
+                                <td class="px-4 py-4 text-sm text-gray-900 hidden sm:table-cell">{{ $alumno->especialidad }}</td>
+                                <td class="px-4 py-4 text-sm text-gray-900 hidden sm:table-cell">{{ $alumno->seguro_medico }}</td>
+                                <td class="px-4 py-4 text-sm text-gray-900 hidden sm:table-cell">{{ $alumno->curp }}</td>
+                                <td class="px-4 py-4 text-sm text-gray-900 hidden sm:table-cell">{{ $alumno->fecha_nacimiento }}</td>
                                 <td class="px-4 py-4 text-sm font-medium flex space-x-4 justify-center">
-                                    <!-- Enlace para editar alumno -->
                                     <a href="{{ route('alumnos.edit', $alumno->matricula) }}" class="text-[#9D2449] hover:text-[#621132]">Editar</a>
-                                    
-                                    <!-- Formulario para eliminar alumno -->
                                     <form action="{{ route('alumnos.destroy', $alumno->matricula) }}" method="POST" class="inline-block">
                                         @csrf
                                         @method('DELETE')
@@ -53,6 +50,8 @@
                     </tbody>
                 </table>
             </div>
+            
+            
 
             <!-- Botones de navegación -->
             <div class="flex justify-between mt-6">
