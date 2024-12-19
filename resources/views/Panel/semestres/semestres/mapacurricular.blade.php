@@ -1,5 +1,5 @@
 <x-master-layout title="Mapa Curricular">
-    <div class="min-h-screen py-2 px-6 bg-gradient-to-b from-gray-100 to-white">
+    <div class="min-h-screen py-2 px-6 background ">
         <div class="container mx-auto">
             <!-- Título principal -->
             <div class="text-center mb-5">
