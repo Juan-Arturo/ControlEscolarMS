@@ -46,8 +46,8 @@
                             Profesores
                         </button>
                         <div class="pl-8 mt-3 space-y-2">
-                            <a href="#" class="block text-gray-200 hover:text-white transition duration-300">Información Personal</a>
-                            <a href="#" class="block text-gray-200 hover:text-white transition duration-300">Materias Impartidas</a>
+                            <a href="{{ route('profesores.index') }}" class="block text-gray-200 hover:text-white transition duration-300">Información Personal</a>
+                            <a href="{{ route('profesor.materiasImpartidas') }}" class="block text-gray-200 hover:text-white transition duration-300">Materias Impartidas</a>
                         </div>
                     </div>
                 </nav>

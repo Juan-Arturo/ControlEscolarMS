@@ -7,6 +7,7 @@ use App\Http\Controllers\Estudiantes\AsistenciaController;
 use App\Http\Controllers\Estudiantes\GraficaController;
 use App\Http\Controllers\Semestres\MateriaController;
 use App\Http\Controllers\Semestres\SemestresController;
+use App\Http\Controllers\Profesores\ProfesorController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,10 +30,15 @@ Route::middleware([
     Route::resource('graficas', GraficaController::class);
     Route::resource('materias', MateriaController::class);
     Route::resource('semestres', SemestresController::class);
+    Route::resource('profesores', ProfesorController::class);
+    
 
     // Rutas específicas
     Route::get('/asistencia/consultar', [AsistenciaController::class, 'consultarAsistencia'])->name('asistencia.consultar');
     Route::get('/semestre/mapacurricular', [SemestresController::class, 'mapaCurricular'])->name('semestre.mapacurricular');
+
+    // Rutas para la maquetación de profesores
+    Route::get('profesore/materias',  [ProfesorController::class, 'materiasImpartidas'])->name('profesor.materiasImpartidas');
 });
 
 // Redirigir automáticamente después del login al home
