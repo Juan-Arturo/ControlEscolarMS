@@ -36,9 +36,15 @@
                 </div>
 
                 <!-- Botón para registrar -->
-                <div>
+                <div class="mt-8 flex justify-between gap-4">
+                    <!-- Volver a grupos (Izquierda) -->
+                    <a href="{{ route('grupos.index') }}"
+                        class="w-full sm:w-auto flex justify-center py-3 px-4 border border-transparent text-lg font-medium rounded-lg text-white bg-[#285C4D] hover:bg-[#13322B] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#621132] transition duration-300 ease-in-out transform hover:scale-105">
+                        Volver
+                    </a>
+                
                     <button type="submit"
-                        class="w-full flex justify-center py-3 px-4 border border-transparent text-lg font-medium rounded-lg text-white bg-[#9D2449] hover:bg-[#621132] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#621132] transition duration-300 ease-in-out transform hover:scale-105">
+                        class="w-full sm:w-auto flex justify-center py-3 px-4 border border-transparent text-lg font-medium rounded-lg text-white bg-[#9D2449] hover:bg-[#621132] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#621132] transition duration-300 ease-in-out transform hover:scale-105">
                         Actualizar
                     </button>
                 </div>

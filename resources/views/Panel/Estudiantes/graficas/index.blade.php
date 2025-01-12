@@ -38,7 +38,7 @@
         data: {
             labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
             datasets: [{
-                label: 'Ventas',
+                label: 'Deserción escolar',
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: '#621132',
                 borderColor: '#4E232E',
@@ -64,7 +64,7 @@
         data: {
             labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
             datasets: [{
-                label: 'Usuarios Activos',
+                label: 'Alumnos Activos',
                 data: [10, 15, 9, 14, 20, 18],
                 backgroundColor: '#285C4D',
                 borderColor: '#13322B',
@@ -88,7 +88,7 @@
     new Chart(pieCtx, {
         type: 'pie',
         data: {
-            labels: ['Producto A', 'Producto B', 'Producto C'],
+            labels: ['Grupo A', 'Grupo B', 'Grupo C'],
             datasets: [{
                 data: [55, 25, 20],
                 backgroundColor: ['#621132', '#902449', '#B38E5D']
