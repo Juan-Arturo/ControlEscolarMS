@@ -18,7 +18,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    // Cambiar el nombre de la ruta para que sea 'home.index'
+
     Route::get('/home', function () {
         return view('Panel.home.index'); // Ubicación correcta de la vista
     })->name('home.index'); // Nombre cambiado a 'home.index'
