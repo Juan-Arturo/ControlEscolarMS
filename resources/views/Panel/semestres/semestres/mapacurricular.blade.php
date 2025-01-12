@@ -1,6 +1,6 @@
 <x-master-layout title="Mapa Curricular">
-    <div class="min-h-screen py-2 px-6 bg-gradient-to-b from-gray-100 via-white to-gray-200">
-        <div class="container mx-auto">
+    <div class="min-h-screen py-2 px-6 bg-gradient-to-b from-gray-100 via-white to-gray-200 mb-8">
+        <div class="container mx-auto ">
             <!-- Título principal -->
             <div class="text-center mb-10">
                 <h1 class="text-4xl font-bold text-[#621132] tracking-wide">Mapa Curricular</h1>

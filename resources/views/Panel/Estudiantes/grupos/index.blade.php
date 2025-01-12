@@ -1,6 +1,6 @@
 <x-master-layout title="Listado de Grupos">
     <div class="min-h-screen bg-gray-100 flex items-start py-2 justify-center background">
-        <div class="max-w-5xl w-full space-y-10 bg-white shadow-2xl rounded-lg p-10">
+        <div class="max-w-5xl w-full space-y-10 bg-white shadow-2xl rounded-lg p-10 mb-6 ">
             <!-- Título del Listado -->
             <div>
                 <h2 class="text-center text-4xl font-extrabold text-[#621132]">Listado de Grupos</h2>
@@ -56,7 +56,7 @@
             </div>
 
             <!-- Botón para agregar nuevo grupo -->
-            <div class="text-right">
+            <div class="text-right ">
                 <a href="{{ route('grupos.create') }}"
                     class="inline-flex items-center px-6 py-3 border border-transparent rounded-full shadow-md text-md font-medium text-white bg-[#9D2449] hover:bg-[#621132] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#621132] transition duration-300 transform hover:scale-105">
                     + Agregar Nuevo Grupo
